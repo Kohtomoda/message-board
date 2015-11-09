@@ -1,26 +1,67 @@
+
+
+
+<div class="row">
+
+<div class="col-md-6">
+
 <div class="panel panel-default">
-    <div class="panel-heading">
+    
+    <div class="panel-heading" align="center">
+    
         メッセージ一覧
+    
     </div>
     
-    <div class="panel-body">
-        <%= @messages.each do |message| %>
+    
+    
+    <div class="panel-body" style="line-height:2em; font-size:16px;">
+        
+        <% @messages.each do |message| %>
+        
         <span class="label label-info"><%= message.name %></span>
+        
         <%= message.body %>
+        
         <br>
+        
         <% end %>
+        
     </div>
+    
+</div>
+
+</div>
+
+<div class="col-md-6 bg-primary" style="padding:40px;">
+    
+<%= form_for(Message.new) do |f| %>
+
+    <form class="form-horizontal">
+
+     <div class="form-group">
+        <label for ="labelName">
+        名前：
+        </label>
+        <%= f.text_field :name, class:"form-control", id: "labelName" %>
+     </div>
+     
+     <div class="form-group">
+        <label for ="LabelName">
+            内容：
+        </label>
+        <%= f.text_area :body, class:"form-control" %>
+     </div>
+     
+     <div class="form-group">
+        <%= f.submit "送信", class:"btn btn-lg btn-default" %>
+    </div>
+    
+    </form>
+    
+<% end %>
+
 </div>
 
 
-
-
-<%= form_for(Message.new) do |f| %>
-    名前：
-    <%= f.text_field :name %>
-    
-    内容：
-    <%= f.text_field :body %>
-    <%= f.submit %>
-    
-<% end %>
+</div>
