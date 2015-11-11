@@ -12,8 +12,13 @@
     <h1 style="color:#fff;">Message Board</h1>
     </header>
     <div class="container">
-    
-  
+      
+      <% if notice %>
+        <div class="alert alert-info">
+          <%= notice %>
+        </div>
+      <% end %>
+      
     <%= yield %>
     
     </div>
