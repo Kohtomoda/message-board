@@ -24,7 +24,6 @@
         </label>
     　<%= f.text_field :age, class:"form-control" %>
     　</div>
-
      
      <div class="form-group">
         <%= f.submit "送信", class:"btn btn-lg btn-default" %>
@@ -32,10 +31,6 @@
     
     </form>
     
-<% end %>
-
-
-<%= form_for(@message) do |f| %>
   <% if @message.errors.present? %>
     <div class="alert alert-danger">
       <%= alert %>
@@ -49,9 +44,7 @@
     </div>
   <% end %>
 <% end %>
-
-
+    
+    
 </div>
-
-
-
+</div>
